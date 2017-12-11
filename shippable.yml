@@ -180,7 +180,7 @@ resources:
       versionName: master
 
 jobs:
-  - name: x86_64__ubu__16_04_prep
+  - name: x86_64_ubu_16_04_prep
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -201,7 +201,7 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
-  - name: all_x86_64__ubu__16_04_prep
+  - name: all_x86_64_ubu_16_04_prep
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -223,7 +223,7 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
-  - name: nod_x86_64__ubu__16_04_prep
+  - name: nod_x86_64_ubu_16_04_prep
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -245,7 +245,7 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
-  - name: pyt_x86_64__ubu__16_04_prep
+  - name: pyt_x86_64_ubu_16_04_prep
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -267,7 +267,7 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
-  - name: clo_x86_64__ubu__16_04_prep
+  - name: clo_x86_64_ubu_16_04_prep
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -289,7 +289,7 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
-  - name: gol_x86_64__ubu__16_04_prep
+  - name: gol_x86_64_ubu_16_04_prep
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -311,7 +311,7 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
-  - name: jav_x86_64__ubu__16_04_prep
+  - name: jav_x86_64_ubu_16_04_prep
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -333,7 +333,7 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
-  - name: sca_x86_64__ubu__16_04_prep
+  - name: sca_x86_64_ubu_16_04_prep
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -355,7 +355,7 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
-  - name: rub_x86_64__ubu__16_04_prep
+  - name: rub_x86_64_ubu_16_04_prep
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -422,7 +422,7 @@ jobs:
       - script: echo 'Failed job .... :('
 
   ### Tagging u16 services
-  - name: tag_push_u16
+  - name: tag_push_x86_64_ubu_16_04
     type: runSh
     steps:
       - IN: x86_64_ubu_16_04_prep_src
