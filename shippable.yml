@@ -10,6 +10,10 @@ resources:
     type: cliConfig
     integration: ric03uec-dockerhub
 
+  - name: u16_gh_ssh
+    type: integration
+    integration: avi_gh_ssh
+
   - name: u16_repo
     type: gitRepo
     integration: avinci_gh
@@ -184,6 +188,7 @@ jobs:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
       - IN: u16_dh_cli
+        switch: off
       - IN: u16_repo
       - TASK:
         - script: |
@@ -203,9 +208,10 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16_img
       - IN: u16all_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
@@ -224,9 +230,10 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16all_img
       - IN: u16nodall_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
@@ -245,9 +252,10 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16all_img
       - IN: u16pytall_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
@@ -266,9 +274,10 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16all_img
       - IN: u16cloall_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
@@ -287,9 +296,10 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16all_img
       - IN: u16golall_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
@@ -308,9 +318,10 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16all_img
       - IN: u16javall_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
@@ -329,9 +340,10 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16javall_img
       - IN: u16scaall_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
@@ -350,9 +362,10 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16all_img
       - IN: u16ruball_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
@@ -371,9 +384,10 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16all_img
       - IN: u16phpall_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
@@ -392,15 +406,81 @@ jobs:
     steps:
       - IN: x86_64_ubu_16_04_prep_src
         switch: off
+      - IN: u16_dh_cli
+        switch: off
       - IN: u16all_img
       - IN: u16cppall_repo
-      - IN: u16_dh_cli
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
               ./buildImage.sh u16cppall
             popd
       - OUT: u16cppall_img
+    on_success:
+      - script: echo 'on success !!!!!'
+    on_failure:
+      - script: echo 'Failed job .... :('
+
+  ### Tagging u16 services
+  - name: tag_push_u16
+    type: runSh
+    steps:
+      - IN: x86_64_ubu_16_04_prep_src
+        switch: off
+      - IN: u16_dh_cli
+        switch: off
+      - IN: u16_gh_ssh
+        switch: off
+      - IN: u16_img
+        switch: off
+      - IN: u16_repo
+        switch: off
+      - IN: u16all_img
+        switch: off
+      - IN: u16all_repo
+        switch: off
+      - IN: u16nodall_img
+        switch: off
+      - IN: u16nodall_repo
+        switch: off
+      - IN: u16pytall_img
+        switch: off
+      - IN: u16pytall_repo
+        switch: off
+      - IN: u16cloall_img
+        switch: off
+      - IN: u16cloall_repo
+        switch: off
+      - IN: u16golall_img
+        switch: off
+      - IN: u16golall_repo
+        switch: off
+      - IN: u16javall_img
+        switch: off
+      - IN: u16javall_repo
+        switch: off
+      - IN: u16scaall_img
+        switch: off
+      - IN: u16scaall_repo
+        switch: off
+      - IN: u16ruball_img
+        switch: off
+      - IN: u16ruball_repo
+        switch: off
+      - IN: u16phpall_img
+        switch: off
+      - IN: u16phpall_repo
+        switch: off
+      - IN: u16cppall_img
+        switch: off
+      - IN: u16cppall_repo
+        switch: off
+      - IN: rel_prod
+      - TASK:
+        - script: |
+            pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
+              ./tagAndPushSvcs.sh u16
+            popd
     on_success:
       - script: echo 'on success !!!!!'
     on_failure:
