@@ -1,2 +1,3 @@
 # x86_64.Ubuntu_16.04.prep
-Images for Shippable Runtime
+Assembly Lines repo for building Shippable Runtime Images for x86_64 architecture
+Ubuntu 16.04 OS
