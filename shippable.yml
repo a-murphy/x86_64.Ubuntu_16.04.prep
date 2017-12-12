@@ -481,7 +481,7 @@ jobs:
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_ubu_16_04_prep_src")
-              ./tagAndPushSvcs.sh u16
+              ./tagAndPushSvcs.sh
             popd
     on_success:
       - script: echo 'on success !!!!!'
