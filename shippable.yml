@@ -14,6 +14,19 @@ resources:
     type: integration
     integration: avi_gh_ssh
 
+  - name: u16_bits_access_cli
+    type: cliConfig
+    integration: aws_bits_access
+    pointer:
+      region: us-east-1
+
+  - name: u16_reqExec_repo
+    type: gitRepo
+    integration: avinci_gh
+    pointer:
+      sourceName: shippable/reqExec
+      branch: master
+
   - name: u16_repo
     type: gitRepo
     integration: avinci_gh
@@ -196,10 +209,6 @@ jobs:
               ./buildImage.sh u16
             popd
       - OUT: u16_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: all_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -218,10 +227,6 @@ jobs:
               ./buildImage.sh u16all
             popd
       - OUT: u16all_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: nod_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -240,10 +245,6 @@ jobs:
               ./buildImage.sh u16nodall
             popd
       - OUT: u16nodall_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: pyt_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -262,10 +263,6 @@ jobs:
               ./buildImage.sh u16pytall
             popd
       - OUT: u16pytall_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: clo_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -284,10 +281,6 @@ jobs:
               ./buildImage.sh u16cloall
             popd
       - OUT: u16cloall_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: gol_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -306,10 +299,6 @@ jobs:
               ./buildImage.sh u16golall
             popd
       - OUT: u16golall_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: jav_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -328,10 +317,6 @@ jobs:
               ./buildImage.sh u16javall
             popd
       - OUT: u16javall_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: sca_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -350,10 +335,6 @@ jobs:
               ./buildImage.sh u16scaall
             popd
       - OUT: u16scaall_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: rub_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -372,10 +353,6 @@ jobs:
               ./buildImage.sh u16ruball
             popd
       - OUT: u16ruball_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: php_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -394,10 +371,6 @@ jobs:
               ./buildImage.sh u16phpall
             popd
       - OUT: u16phpall_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   - name: cpp_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -416,10 +389,6 @@ jobs:
               ./buildImage.sh u16cppall
             popd
       - OUT: u16cppall_img
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
 
   ### Tagging u16 services
   - name: ship_dh_x86_64_Ubuntu_16_04_tag_push
@@ -483,7 +452,18 @@ jobs:
             pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./tagAndPushSvcs.sh drydock shippable dhShippable.txt ship_dh_x86_64_Ubuntu_16_04_tag_push
             popd
-    on_success:
-      - script: echo 'on success !!!!!'
-    on_failure:
-      - script: echo 'Failed job .... :('
+
+  # TODO: move this job to x86_64 Ubuntu 16.04
+  - name: reqExec_x86_64_Ubuntu_16_04_pack
+    type: runSh
+    steps:
+      - IN: x86_64_Ubuntu_16_04_prep_repo
+        switch: off
+      - IN: u16_bits_access_cli
+        switch: off
+      - IN: u16_reqExec_repo
+      - TASK:
+        - script: |
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+              ./buildAndPushReqExecArtifacts.sh
+            popd
