@@ -1,4 +1,11 @@
 resources:
+  - name: x86_64_Ubuntu_16_04_prep_src
+    type: gitRepo
+    integration: avinci_gh
+    pointer:
+      sourceName: shippable/x86_64.Ubuntu_14.04.prep
+      branch: master
+
   - name: x86_64_Ubuntu_16_04_prep_repo
     type: gitRepo
     integration: avinci_gh
