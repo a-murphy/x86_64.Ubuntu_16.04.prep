@@ -391,7 +391,7 @@ jobs:
       - OUT: u16cppall_img
 
   ### Tagging u16 services
-  - name: ship_dh_x86_64_Ubuntu_16_04_tag_push
+  - name: dry_dh_x86_64_Ubuntu_16_04_tag_push
     type: runSh
     triggerMode: parallel
     dependencyMode: strict
@@ -450,7 +450,7 @@ jobs:
       - TASK:
         - script: |
             pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./tagAndPushSvcs.sh drydock shippable dhShippable.txt ship_dh_x86_64_Ubuntu_16_04_tag_push
+              ./tagAndPushSvcs.sh drydock dry-dock dhDrydock.txt dry_dh_x86_64_Ubuntu_16_04_tag_push
             popd
 
   # TODO: move this job to x86_64 Ubuntu 16.04
