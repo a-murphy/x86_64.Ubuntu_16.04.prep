@@ -200,10 +200,10 @@ jobs:
         switch: off
       - IN: u16_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16
+            - popd
       - OUT: u16_img
 
   - name: all_x86_64_Ubuntu_16_04_prep
@@ -218,10 +218,10 @@ jobs:
       - IN: u16_img
       - IN: u16all_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16all
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16all
+            - popd
       - OUT: u16all_img
 
   - name: nod_x86_64_Ubuntu_16_04_prep
@@ -236,10 +236,10 @@ jobs:
       - IN: u16all_img
       - IN: u16nodall_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16nodall
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16nodall
+            - popd
       - OUT: u16nodall_img
 
   - name: pyt_x86_64_Ubuntu_16_04_prep
@@ -254,10 +254,10 @@ jobs:
       - IN: u16all_img
       - IN: u16pytall_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16pytall
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16pytall
+            - popd
       - OUT: u16pytall_img
 
   - name: clo_x86_64_Ubuntu_16_04_prep
@@ -272,10 +272,10 @@ jobs:
       - IN: u16all_img
       - IN: u16cloall_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16cloall
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16cloall
+            - popd
       - OUT: u16cloall_img
 
   - name: gol_x86_64_Ubuntu_16_04_prep
@@ -290,10 +290,10 @@ jobs:
       - IN: u16all_img
       - IN: u16golall_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16golall
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16golall
+            - popd
       - OUT: u16golall_img
 
   - name: jav_x86_64_Ubuntu_16_04_prep
@@ -308,10 +308,10 @@ jobs:
       - IN: u16all_img
       - IN: u16javall_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16javall
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16javall
+            - popd
       - OUT: u16javall_img
 
   - name: sca_x86_64_Ubuntu_16_04_prep
@@ -326,10 +326,10 @@ jobs:
       - IN: u16javall_img
       - IN: u16scaall_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16scaall
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16scaall
+            - popd
       - OUT: u16scaall_img
 
   - name: rub_x86_64_Ubuntu_16_04_prep
@@ -344,10 +344,10 @@ jobs:
       - IN: u16all_img
       - IN: u16ruball_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16ruball
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16ruball
+            - popd
       - OUT: u16ruball_img
 
   - name: php_x86_64_Ubuntu_16_04_prep
@@ -362,10 +362,10 @@ jobs:
       - IN: u16all_img
       - IN: u16phpall_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16phpall
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16phpall
+            - popd
       - OUT: u16phpall_img
 
   - name: cpp_x86_64_Ubuntu_16_04_prep
@@ -380,10 +380,10 @@ jobs:
       - IN: u16all_img
       - IN: u16cppall_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildImage.sh u16cppall
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildImage.sh u16cppall
+            - popd
       - OUT: u16cppall_img
 
   # TODO: move this job to x86_64 Ubuntu 16.04
@@ -396,7 +396,7 @@ jobs:
         switch: off
       - IN: u16_reqExec_repo
       - TASK:
-        - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
-              ./buildAndPushReqExecArtifacts.sh
-            popd
+          script:
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildAndPushReqExecArtifacts.sh
+            - popd
