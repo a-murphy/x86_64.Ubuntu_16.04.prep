@@ -1,5 +1,5 @@
 resources:
-  - name: x86_64_Ubuntu_16_04_prep_src
+  - name: x86_64_Ubuntu_16_04_prep_repo
     type: gitRepo
     integration: avinci_gh
     pointer:
@@ -185,14 +185,14 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
       - IN: u16_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16
             popd
       - OUT: u16_img
@@ -206,7 +206,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -214,7 +214,7 @@ jobs:
       - IN: u16all_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16all
             popd
       - OUT: u16all_img
@@ -228,7 +228,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -236,7 +236,7 @@ jobs:
       - IN: u16nodall_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16nodall
             popd
       - OUT: u16nodall_img
@@ -250,7 +250,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -258,7 +258,7 @@ jobs:
       - IN: u16pytall_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16pytall
             popd
       - OUT: u16pytall_img
@@ -272,7 +272,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -280,7 +280,7 @@ jobs:
       - IN: u16cloall_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16cloall
             popd
       - OUT: u16cloall_img
@@ -294,7 +294,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -302,7 +302,7 @@ jobs:
       - IN: u16golall_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16golall
             popd
       - OUT: u16golall_img
@@ -316,7 +316,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -324,7 +324,7 @@ jobs:
       - IN: u16javall_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16javall
             popd
       - OUT: u16javall_img
@@ -338,7 +338,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -346,7 +346,7 @@ jobs:
       - IN: u16scaall_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16scaall
             popd
       - OUT: u16scaall_img
@@ -360,7 +360,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -368,7 +368,7 @@ jobs:
       - IN: u16ruball_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16ruball
             popd
       - OUT: u16ruball_img
@@ -382,7 +382,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -390,7 +390,7 @@ jobs:
       - IN: u16phpall_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16phpall
             popd
       - OUT: u16phpall_img
@@ -404,7 +404,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -412,7 +412,7 @@ jobs:
       - IN: u16cppall_repo
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./buildImage.sh u16cppall
             popd
       - OUT: u16cppall_img
@@ -427,7 +427,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: x86_64_Ubuntu_16_04_prep_src
+      - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
       - IN: u16_dh_cli
         switch: off
@@ -480,7 +480,7 @@ jobs:
       - IN: rel_prod
       - TASK:
         - script: |
-            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_src")
+            pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
               ./tagAndPushSvcs.sh drydock shippable dhShippable.txt ship_dh_x86_64_Ubuntu_16_04_tag_push
             popd
     on_success:
