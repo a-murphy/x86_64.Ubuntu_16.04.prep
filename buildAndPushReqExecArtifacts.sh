@@ -1,14 +1,15 @@
 #!/bin/bash -e
 
 # Input parameters
+export RES_REPO=$1
 export ARCHITECTURE="x86_64"
-export OS="Ubuntu_16.04"
+export OS="Ubuntu_14.04"
 export ARTIFACTS_BUCKET="s3://shippable-artifacts"
 export VERSION=master
 
 # reqExec
-export REQ_EXEC_PATH="$REQEXEC_REPO_STATE"
-export REQ_EXEC_PACKAGE_PATH="$REQEXEC_REPO_STATE/package/$ARCHITECTURE/$OS"
+export REQ_EXEC_PATH=$(shipctl get_resource_state $RES_REPO)
+export REQ_EXEC_PACKAGE_PATH="$REQ_EXEC_PATH/package/$ARCHITECTURE/$OS"
 
 # Binaries
 export REQ_EXEC_BINARY_DIR="/tmp/reqExec"
