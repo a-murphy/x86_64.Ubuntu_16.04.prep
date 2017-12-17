@@ -3,7 +3,7 @@ resources:
     type: gitRepo
     integration: avinci_gh
     pointer:
-      sourceName: shippable/x86_64.Ubuntu_14.04.prep
+      sourceName: shippable/x86_64.Ubuntu_16.04.prep
       branch: master
 
   - name: u16_dh_cli
