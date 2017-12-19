@@ -386,7 +386,6 @@ jobs:
             - popd
       - OUT: u16cppall_img
 
-  # TODO: move this job to x86_64 Ubuntu 16.04
   - name: reqExec_x86_64_Ubuntu_16_04_pack
     type: runSh
     steps:
