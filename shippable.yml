@@ -16,6 +16,12 @@ resources:
     pointer:
       region: us-east-1
 
+  - name: u16_bits_ecr_cli
+    type: cliConfig
+    integration: ecr_bits_push
+    pointer:
+      region: us-east-1
+
   - name: u16_reqExec_repo
     type: gitRepo
     integration: avinci_gh
@@ -398,4 +404,27 @@ jobs:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildAndPushReqExecArtifacts.sh u16_reqExec_repo
+            - popd
+
+  - name: reqProc_x86_64_Ubuntu_16_04_prep
+    type: runSh
+    steps:
+      - IN: u16_bits_ecr_cli
+        scopes:
+          - ecr
+        switch: off
+      - IN: u16_dh_cli
+        switch: off
+      - IN: reqProc_repo
+      - IN: reqExec_x86_64_Ubuntu_14_04_pack
+      - IN: reqExec_x86_64_Ubuntu_16_04_pack
+      - IN: package_reqExec_x86_64_CentOS_7
+      - IN: package_reqExec_x86_64_macOS_10_12
+      - IN: reqExec_aarch64_Ubuntu_16_04_pack
+      - IN: execTemplates_repo
+      - IN: microbase_img
+      - TASK:
+          script:
+            - pushd $(shipctl get_resource_state "reqProc_repo")
+            - ./build.sh x86_64 Ubuntu_16.04 drydock reqproc
             - popd
