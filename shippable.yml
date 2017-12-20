@@ -424,7 +424,7 @@ jobs:
       - IN: reqExec_x86_64_Ubuntu_14_04_pack
       - IN: reqExec_x86_64_Ubuntu_16_04_pack
       - IN: package_reqExec_x86_64_CentOS_7
-      - IN: package_reqExec_x86_64_macOS_10_12
+      - IN: reqExec_x86_64_macOS_10_12_pack
       - IN: reqExec_aarch64_Ubuntu_16_04_pack
       - IN: execTemplates_repo
       - IN: microbase_img
