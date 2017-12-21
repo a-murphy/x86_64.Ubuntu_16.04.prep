@@ -6,6 +6,13 @@ resources:
       sourceName: shippable/x86_64.Ubuntu_16.04.prep
       branch: master
 
+  - name: u16_reqProc_repo
+    type: gitRepo
+    integration: avinci_gh
+    pointer:
+      sourceName: shippable/reqProc
+      branch: master
+
   - name: u16_dh_cli
     type: cliConfig
     integration: ric03uec-dockerhub
@@ -420,7 +427,7 @@ jobs:
         switch: off
       - IN: u16_dh_cli
         switch: off
-      - IN: reqProc_repo
+      - IN: u16_reqProc_repo
       - IN: reqExec_x86_64_Ubuntu_14_04_pack
       - IN: reqExec_x86_64_Ubuntu_16_04_pack
       - IN: reqExec_x86_64_CentOS_7_pack
@@ -430,6 +437,6 @@ jobs:
       - IN: microbase_img
       - TASK:
           script:
-            - pushd $(shipctl get_resource_state "reqProc_repo")
+            - pushd $(shipctl get_resource_state "u16_reqProc_repo")
             - ./build.sh x86_64 Ubuntu_16.04 drydock reqproc
             - popd
