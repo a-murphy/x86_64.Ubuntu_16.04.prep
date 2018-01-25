@@ -408,6 +408,8 @@ jobs:
 
   - name: reqExec_x86_64_Ubuntu_16_04_pack
     type: runSh
+    runtime:
+      nodePool: x86_u1604_cus_01
     triggerMode: parallel
     dependencyMode: strict
     steps:

@@ -3,7 +3,7 @@
 # Input parameters
 export RES_REPO=$1
 export ARCHITECTURE="x86_64"
-export OS="Ubuntu_14.04"
+export OS="Ubuntu_16.04"
 export ARTIFACTS_BUCKET="s3://shippable-artifacts"
 export VERSION=master
 
