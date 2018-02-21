@@ -20,6 +20,13 @@ resources:
       sourceName: shippable/execTemplates
       branch: master
 
+  - name: u16_micro_repo
+    type: gitRepo
+    integration: avinci_gh
+    pointer:
+      sourceName: Shippable/micro
+      branch: master
+
   - name: u16_dh_cli
     type: cliConfig
     integration: ric03uec-dockerhub
@@ -422,6 +429,32 @@ jobs:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildAndPushReqExecArtifacts.sh u16_reqExec_repo
+            - popd
+
+  - name: reports_x86_64_Ubuntu_16_04_pack
+    type: runSh
+    runtime:
+      nodePool: x86_u1604_cus_01
+    triggerMode: parallel
+    dependencyMode: strict
+    steps:
+      - IN: x86_64_Ubuntu_16_04_prep_repo
+        switch: off
+      - IN: u16_bits_access_cli
+        switch: off
+      - IN: u16_micro_repo
+        switch: off
+      - TASK:
+          runtime:
+            options:
+              imageName: drydock/u16golall
+              imageTag: v6.1.4
+          script:
+            # Note: gvm doesn't seem to load automatically, so add it to the PATH manually.
+            # Remove this if its not needed anymore.
+            - PATH="$PATH:/root/.gvm/gos/go1.9.2/bin"
+            - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
+            - ./buildAndPushReportsArtifacts.sh u16_micro_repo
             - popd
 
   - name: reqProc_x86_64_Ubuntu_16_04_prep
