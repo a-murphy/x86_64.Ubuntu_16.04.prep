@@ -3,33 +3,33 @@ resources:
     type: gitRepo
     integration: avinci_gh
     pointer:
-      sourceName: shippable/x86_64.Ubuntu_16.04.prep
+      sourceName: a-murphy/x86_64.Ubuntu_16.04.prep
       branch: master
 
-  - name: u16_reqProc_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: shippable/reqProc
-      branch: master
+#  - name: u16_reqProc_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: shippable/reqProc
+#      branch: master
 
-  - name: u16_execTemplates_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: shippable/execTemplates
-      branch: master
+#  - name: u16_execTemplates_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: shippable/execTemplates
+#      branch: master
 
-  - name: u16_micro_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: Shippable/micro
-      branch: master
+#  - name: u16_micro_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: Shippable/micro
+#      branch: master
 
-  - name: u16_dh_cli
-    type: cliConfig
-    integration: ric03uec-dockerhub
+#  - name: u16_dh_cli
+#    type: cliConfig
+#    integration: ric03uec-dockerhub
 
   - name: u16_bits_access_cli
     type: cliConfig
@@ -37,25 +37,25 @@ resources:
     pointer:
       region: us-east-1
 
-  - name: u16_bits_ecr_cli
-    type: cliConfig
-    integration: ecr_bits_push
-    pointer:
-      region: us-east-1
+#  - name: u16_bits_ecr_cli
+#    type: cliConfig
+#    integration: ecr_bits_push
+#    pointer:
+#      region: us-east-1
 
-  - name: u16_reqExec_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: shippable/reqExec
-      branch: master
+#  - name: u16_reqExec_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: shippable/reqExec
+#      branch: master
 
-  - name: u16_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16
-      branch: master
+#  - name: u16_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16
+#      branch: master
 
   - name: u16_img
     type: image
@@ -65,12 +65,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16all_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16all
-      branch: master
+#  - name: u16all_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16all
+#      branch: master
 
   - name: u16all_img
     type: image
@@ -80,12 +80,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16nodall_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16nodall
-      branch: master
+#  - name: u16nodall_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16nodall
+#      branch: master
 
   - name: u16nodall_img
     type: image
@@ -95,12 +95,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16pytall_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16pytall
-      branch: master
+#  - name: u16pytall_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16pytall
+#      branch: master
 
   - name: u16pytall_img
     type: image
@@ -110,12 +110,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16cloall_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16cloall
-      branch: master
+#  - name: u16cloall_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16cloall
+#      branch: master
 
   - name: u16cloall_img
     type: image
@@ -125,12 +125,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16golall_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16golall
-      branch: master
+#  - name: u16golall_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16golall
+#      branch: master
 
   - name: u16golall_img
     type: image
@@ -140,12 +140,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16javall_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16javall
-      branch: master
+#  - name: u16javall_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16javall
+#      branch: master
 
   - name: u16javall_img
     type: image
@@ -155,12 +155,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16scaall_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16scaall
-      branch: master
+#  - name: u16scaall_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16scaall
+#      branch: master
 
   - name: u16scaall_img
     type: image
@@ -170,12 +170,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16ruball_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16ruball
-      branch: master
+#  - name: u16ruball_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16ruball
+#      branch: master
 
   - name: u16ruball_img
     type: image
@@ -185,12 +185,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16phpall_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16phpall
-      branch: master
+#  - name: u16phpall_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16phpall
+#      branch: master
 
   - name: u16phpall_img
     type: image
@@ -200,12 +200,12 @@ resources:
     seed:
       versionName: master
 
-  - name: u16cppall_repo
-    type: gitRepo
-    integration: avinci_gh
-    pointer:
-      sourceName: dry-dock/u16cppall
-      branch: master
+#  - name: u16cppall_repo
+#    type: gitRepo
+#    integration: avinci_gh
+#    pointer:
+#      sourceName: dry-dock/u16cppall
+#      branch: master
 
   - name: u16cppall_img
     type: image
@@ -223,15 +223,15 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
-      - IN: u16_repo
+#      - IN: u16_dh_cli
+#        switch: off
+#      - IN: u16_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16 x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16_img
+#      - OUT: u16_img
 
   - name: all_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -240,16 +240,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+#      - IN: u16_dh_cli
+#        switch: off
       - IN: u16_img
-      - IN: u16all_repo
+#      - IN: u16all_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16all all_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16all_img
+#      - OUT: u16all_img
 
   - name: nod_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -258,16 +258,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+#      - IN: u16_dh_cli
+#        switch: off
       - IN: u16all_img
-      - IN: u16nodall_repo
+#      - IN: u16nodall_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16nodall nod_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16nodall_img
+#      - OUT: u16nodall_img
 
   - name: pyt_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -276,16 +276,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+#      - IN: u16_dh_cli
+#        switch: off
       - IN: u16all_img
-      - IN: u16pytall_repo
+#      - IN: u16pytall_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16pytall pyt_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16pytall_img
+#      - OUT: u16pytall_img
 
   - name: clo_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -294,16 +294,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+#      - IN: u16_dh_cli
+#        switch: off
       - IN: u16all_img
-      - IN: u16cloall_repo
+#      - IN: u16cloall_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16cloall clo_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16cloall_img
+#      - OUT: u16cloall_img
 
   - name: gol_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -312,16 +312,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+#      - IN: u16_dh_cli
+#        switch: off
       - IN: u16all_img
-      - IN: u16golall_repo
+#      - IN: u16golall_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16golall gol_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16golall_img
+#      - OUT: u16golall_img
 
   - name: jav_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -330,16 +330,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+#      - IN: u16_dh_cli
+#        switch: off
       - IN: u16all_img
-      - IN: u16javall_repo
+#      - IN: u16javall_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16javall jav_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16javall_img
+#      - OUT: u16javall_img
 
   - name: sca_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -348,16 +348,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+#      - IN: u16_dh_cli
+#        switch: off
       - IN: u16javall_img
-      - IN: u16scaall_repo
+#      - IN: u16scaall_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16scaall sca_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16scaall_img
+#      - OUT: u16scaall_img
 
   - name: rub_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -366,16 +366,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+#      - IN: u16_dh_cli
+#        switch: off
       - IN: u16all_img
-      - IN: u16ruball_repo
+#      - IN: u16ruball_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16ruball rub_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16ruball_img
+#      - OUT: u16ruball_img
 
   - name: php_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -384,16 +384,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+#      - IN: u16_dh_cli
+#        switch: off
       - IN: u16all_img
-      - IN: u16phpall_repo
+#      - IN: u16phpall_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16phpall php_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16phpall_img
+#      - OUT: u16phpall_img
 
   - name: cpp_x86_64_Ubuntu_16_04_prep
     type: runSh
@@ -402,16 +402,16 @@ jobs:
     steps:
       - IN: x86_64_Ubuntu_16_04_prep_repo
         switch: off
-      - IN: u16_dh_cli
-        switch: off
+  #    - IN: u16_dh_cli
+  #      switch: off
       - IN: u16all_img
-      - IN: u16cppall_repo
+  #    - IN: u16cppall_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
             - ./buildImage.sh u16cppall cpp_x86_64_Ubuntu_16_04_prep
             - popd
-      - OUT: u16cppall_img
+  #    - OUT: u16cppall_img
 
   - name: reqExec_x86_64_Ubuntu_16_04_pack
     type: runSh
@@ -424,7 +424,7 @@ jobs:
         switch: off
       - IN: u16_bits_access_cli
         switch: off
-      - IN: u16_reqExec_repo
+  #    - IN: u16_reqExec_repo
       - TASK:
           script:
             - pushd $(shipctl get_resource_state "x86_64_Ubuntu_16_04_prep_repo")
@@ -442,8 +442,8 @@ jobs:
         switch: off
       - IN: u16_bits_access_cli
         switch: off
-      - IN: u16_micro_repo
-        switch: off
+  #    - IN: u16_micro_repo
+  #      switch: off
       - TASK:
           runtime:
             options:
@@ -462,22 +462,23 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     steps:
-      - IN: u16_bits_ecr_cli
-        scopes:
-          - ecr
-        switch: off
-      - IN: u16_dh_cli
-        switch: off
-      - IN: u16_reqProc_repo
-      - IN: reqExec_x86_64_Ubuntu_14_04_pack
-      - IN: reqExec_x86_64_Ubuntu_16_04_pack
-      - IN: reqExec_x86_64_CentOS_7_pack
-      - IN: reqExec_x86_64_macOS_10_12_pack
-      - IN: reqExec_aarch64_Ubuntu_16_04_pack
-      - IN: u16_execTemplates_repo
+  #    - IN: u16_bits_ecr_cli
+  #      scopes:
+  #        - ecr
+  #      switch: off
+  #    - IN: u16_dh_cli
+  #      switch: off
+  #    - IN: u16_reqProc_repo
+  #    - IN: reqExec_x86_64_Ubuntu_14_04_pack
+  #    - IN: reqExec_x86_64_Ubuntu_16_04_pack
+  #    - IN: reqExec_x86_64_CentOS_7_pack
+  #    - IN: reqExec_x86_64_macOS_10_12_pack
+  #    - IN: reqExec_aarch64_Ubuntu_16_04_pack
+  #    - IN: u16_execTemplates_repo
       - IN: microbase_img
       - TASK:
           script:
-            - pushd $(shipctl get_resource_state "u16_reqProc_repo")
-            - ./build.sh x86_64 Ubuntu_16.04 drydock reqproc
-            - popd
+            - echo "test"
+  #          - pushd $(shipctl get_resource_state "u16_reqProc_repo")
+  #          - ./build.sh x86_64 Ubuntu_16.04 drydock reqproc
+  #          - popd
